@@ -16,7 +16,7 @@ Example:
 
 Then you may need to run `gen-hie » hie.yaml` inside the new directory to set up the the Haskell Language Server cradle.
 
-The script creates a file in the `src` directory for every problem name given, with some boilerplate input written.
+The script creates a file in the `src` directory for every problem name given, with some boilerplate input written. It runs on any number of problem names from one to five. I haven't seen any more than five problems in a single Code Jam round so I've left it at that.
 
 ## Running a problem
 
