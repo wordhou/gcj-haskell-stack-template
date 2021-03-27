@@ -1,0 +1,16 @@
+#!/bin/bash
+# Usage: ./jam 2011q bot candy magicka goro
+p=$(($# - 1))
+
+cmd="stack new $1 templates/jam$p"
+
+shift
+for ((i=1; i <= p; i++))
+do
+  cmd+=" -p $i:$1"
+  shift 
+done
+
+exec $cmd
+cd $1
+gen-hie >> hie.yaml

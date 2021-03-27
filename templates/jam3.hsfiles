@@ -1,0 +1,95 @@
+{-# START_FILE package.yaml #-}
+name:                {{name}}
+version:             0.1.0.0
+github:              "{{github-username}}{{^github-username}}githubuser{{/github-username}}/{{name}}"
+license:             BSD3
+author:              "{{author-name}}{{^author-name}}Author name here{{/author-name}}"
+maintainer:          "{{author-email}}{{^author-email}}example@example.com{{/author-email}}"
+copyright:           "{{copyright}}{{^copyright}}{{year}}{{^year}}2019{{/year}} {{author-name}}{{^author-name}}Author name here{{/author-name}}{{/copyright}}"
+
+extra-source-files:
+- README.md
+
+_exe-defs: &exe-defaults
+  source-dirs:    src
+  dependencies:
+    - base >= 4.7 && < 5
+    - vector
+    - containers
+    - unordered-containers
+    - array
+    - transformers
+    - primitive
+
+_test-defs: &test-defaults
+  source-dirs:    test
+  dependencies:
+    - base >= 4.7 && < 5
+
+executables:
+  {{1}}:
+    main:         {{1}}.hs
+    <<:           *exe-defaults
+  {{2}}:
+    main:         {{2}}.hs
+    <<:           *exe-defaults
+  {{3}}:
+    main:         {{3}}.hs
+    <<:           *exe-defaults
+
+{-# START_FILE Setup.hs #-}
+import Distribution.Simple
+main = defaultMain
+
+{-# START_FILE src/{{1}}.hs #-}
+import Control.Monad
+
+main = readLn >>= \t -> forM_ [1..t] $ \t' ->
+  getParams >>= putStrLn . cs t' . disp . solve where
+  cs t xs = "Case #" ++ show t ++ ": " ++ xs
+  disp = show
+
+getParams = do
+  -- n <- readLn
+  -- ls <- replicateM n getLine
+  return ()
+
+solve () = ()
+
+{-# START_FILE src/{{2}}.hs #-}
+import Control.Monad
+
+main = readLn >>= \t -> forM_ [1..t] $ \t' ->
+  getParams >>= putStrLn . cs t' . disp . solve where
+  cs t xs = "Case #" ++ show t ++ ": " ++ xs
+  disp = show
+
+getParams = do
+  -- n <- readLn
+  -- ls <- replicateM n getLine
+  return ()
+
+solve () = ()
+
+{-# START_FILE src/{{3}}.hs #-}
+import Control.Monad
+
+main = readLn >>= \t -> forM_ [1..t] $ \t' ->
+  getParams >>= putStrLn . cs t' . disp . solve where
+  cs t xs = "Case #" ++ show t ++ ": " ++ xs
+  disp = show
+
+getParams = do
+  -- n <- readLn
+  -- ls <- replicateM n getLine
+  return ()
+
+solve () = ()
+
+{-# START_FILE README.md #-}
+# {{1}}
+
+# {{2}}
+
+# {{3}}
+
