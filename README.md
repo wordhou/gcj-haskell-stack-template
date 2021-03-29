@@ -1,4 +1,4 @@
-A set of stack templates and scripts for setting to compete in Google Code Jam using Haskell and Stack. For my tooling I'm using stack, neovim and Haskell Language Server with coc. I've tried to include most of the packages available to Google server's Haskell setup in the stack project configuration.
+A set of stack templates and scripts for setting up my directory to compete in Google Code Jam using Haskell/Stack. For my tooling I'm currently using stack, neovim and Haskell Language Server with coc. I've tried to include most of the packages available to Google server's Haskell setup in the stack project configuration.
 
 # Usage
 
@@ -33,7 +33,7 @@ Unfortunately the way my stack project is set up seems to build all of the sourc
 stack repl [package-name]:exe:[problem-name]
 ```
 
-# Packages included by default in the package.yaml
+# Packages included by default
 
 - vector
 - containers
