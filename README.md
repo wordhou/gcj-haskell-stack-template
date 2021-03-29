@@ -1,9 +1,6 @@
 A set of stack templates and scripts for setting up my directory to compete in Google Code Jam using Haskell/Stack. For my tooling I'm currently using stack, neovim and Haskell Language Server with coc. I've tried to include most of the packages available to Google server's Haskell setup in the stack project configuration.
 
 # Usage
-
-Make sure stack is installed.
-
 ```
 ./jam [name-of-package] [first-problem] [second-problem] [third-problem] … [fifth-problem]
 ```
