@@ -52,3 +52,13 @@ data Element = A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P |
 -- Parsing
 import Text.ParserCombinator.Parsec
 
+
+-- Stateful memoization
+-- memoStHashMap :: (Hashable a, Eq a, Monad m) => ((a -> m a) -> a -> m a) -> (a -> a)
+memoStHashMap f x = evalState (f getF x) HM.empty where
+  getF i = gets (HM.lookup i) >>=
+    \case Just v -> return v
+          Nothing -> do
+            v <- f getF i
+            modify $ HM.insert i v
+            return v
